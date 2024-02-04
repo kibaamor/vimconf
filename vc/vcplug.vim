@@ -24,10 +24,17 @@ if has('nvim') || has('patch-8.0.902')
 else
     Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
+
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'nvie/vim-togglemouse'
 Plug 'pbrisbin/vim-mkdir'
+
+Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
+Plug 'luochen1990/rainbow'
 
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
@@ -43,13 +50,9 @@ Plug 'maralla/completor.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-Plug 'vim-airline/vim-airline'
-Plug 'sheerun/vim-polyglot'
-Plug 'luochen1990/rainbow'
-
-Plug 'joshdick/onedark.vim'
-
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
+
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()

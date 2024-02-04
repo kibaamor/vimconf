@@ -4,11 +4,6 @@ set updatetime=100
 " }}
 
 
-" rainbow {{
-let g:rainbow_active = 1
-" }}
-
-
 " colorscheme {{
 if (has("autocmd") && !has("gui_running"))
   augroup colorset
@@ -27,10 +22,23 @@ endtry
 " }}
 
 
+" airline {{
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" }}
+
+
+" rainbow {{
+let g:rainbow_active = 1
+" }}
+
+
 " EasyAlign {{
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}
+
 
 " NERDTree {{
 nmap <F9> :NERDTreeToggle<CR>
