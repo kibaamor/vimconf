@@ -54,6 +54,12 @@ let g:Lf_ShortcutF = '<c-o>'
 let g:Lf_WindowPosition = 'fullScreen'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PopupColorscheme = 'onedark'
+let g:Lf_PreviewResult = {'Rg': 0 }
+let g:Lf_RgConfig = [
+    \ "--glob=!git/*",
+    \ "--glob=!**/tags",
+    \ "--hidden"
+  \ ]
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
