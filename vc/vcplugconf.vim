@@ -50,9 +50,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Leaderf {{
 " install ripgrep(https://github.com/BurntSushi/ripgrep) for use rg
-let g:Lf_ShortcutF = '<c-p>'
-let g:Lf_WindowPosition = 'popup'
+let g:Lf_ShortcutF = '<c-o>'
+let g:Lf_WindowPosition = 'fullScreen'
 let g:Lf_PreviewInPopup = 1
+let g:Lf_PopupColorscheme = 'onedark'
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>

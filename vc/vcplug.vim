@@ -13,11 +13,7 @@ if (!(has("win32") || has("win64") || has("win95") || has("win16")))
 endif
 
 
-if (has("nvim"))
-    call plug#begin('~/.local/share/nvim/plugged')
-else
-    call plug#begin('~/.vim/plugged')
-endif
+call plug#begin()
 
 if has('nvim') || has('patch-8.0.902')
     Plug 'mhinz/vim-signify'
@@ -36,19 +32,22 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'luochen1990/rainbow'
 
-Plug 'ervandew/supertab'
+if v:version >= 800
+    Plug 'ervandew/supertab'
+endif
 Plug 'junegunn/vim-easy-align'
 Plug 'preservim/nerdcommenter'
 Plug 'bronson/vim-trailing-whitespace'
 
-Plug 'preservim/nerdtree',
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdtree'
 
-Plug 'Yggdroot/LeaderF',
+Plug 'Yggdroot/LeaderF'
 
-Plug 'maralla/completor.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+if v:version >= 800
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'maralla/completor.vim'
+endif
 
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
