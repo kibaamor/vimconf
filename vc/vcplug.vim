@@ -42,6 +42,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdtree'
 
 Plug 'Yggdroot/LeaderF'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 if v:version >= 800
     Plug 'SirVer/ultisnips'
