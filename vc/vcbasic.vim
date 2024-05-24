@@ -112,8 +112,7 @@ set noswapfile
 " }}
 
 " true color {{
-if has('termguicolors') &&
-            \($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
+if has('termguicolors') && ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
     set termguicolors
 endif
 " }}

@@ -5,14 +5,6 @@ set updatetime=100
 
 
 " colorscheme {{
-if (has("autocmd") && !has("gui_running"))
-  augroup colorset
-    autocmd!
-    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white })
-  augroup END
-endif
-
 syntax on
 try
     colorscheme onedark
@@ -96,7 +88,7 @@ map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <Space>   <Plug><easymotion-bd-w)
+map  <Space>   <Plug>(easymotion-bd-w)
 nmap <Space>   <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-w)
 nmap <Leader>W <Plug>(easymotion-overwin-w)
