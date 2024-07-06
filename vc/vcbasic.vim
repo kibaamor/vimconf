@@ -133,6 +133,7 @@ set backspace=indent,eol,start
 set whichwrap+=<,>,h,l
 set history=512
 set spelllang+=cjk
+set t_u7=
 
 " keep undo history across sessions, by storing in file.
 " only works all the time.

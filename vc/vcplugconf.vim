@@ -40,13 +40,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " }}
 
 
+" https://github.com/Yggdroot/LeaderF/blob/master/doc/leaderf.txt
 " Leaderf {{
 " install ripgrep(https://github.com/BurntSushi/ripgrep) for use rg
 let g:Lf_ShortcutF = '<c-o>'
-let g:Lf_WindowPosition = 'fullScreen'
+let g:Lf_WindowPosition = 'popup'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_PopupColorscheme = 'onedark'
-let g:Lf_PreviewResult = {'Rg': 0 }
+let g:Lf_StlColorscheme = 'onedark'
+let g:Lf_PreviewResult = { 'Rg': 1 }
 let g:Lf_RgConfig = [
     \ "--glob=!git/*",
     \ "--glob=!**/tags",
@@ -57,15 +59,16 @@ noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
 
-noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
-noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --all-buffers -S -e %s ", expand("<cword>"))<CR>
+noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -S -e %s ", expand("<cword>"))<CR>
 " search visually selected text literally
-xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -S -e %s ", leaderf#Rg#visual())<CR>
 noremap go :<C-U>Leaderf! rg --recall<CR>
 
 " install gtags (sudo apt install global) and pygments (pip install pygments) for use gtags
 " use `Leaderf gtags --update` for manual update
 let g:Lf_GtagsAutoGenerate = 1
+let g:Lf_GtagsSource = 2
 let g:Lf_Gtagslabel = 'native-pygments'
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
