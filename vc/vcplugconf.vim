@@ -67,7 +67,7 @@ noremap go :<C-U>Leaderf! rg --recall<CR>
 
 " install gtags (sudo apt install global) and pygments (pip install pygments) for use gtags
 " use `Leaderf gtags --update` for manual update
-let g:Lf_GtagsAutoGenerate = 1
+let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_GtagsSource = 2
 let g:Lf_Gtagslabel = 'native-pygments'
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
