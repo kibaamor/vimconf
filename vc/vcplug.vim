@@ -44,6 +44,9 @@ Plug 'Yggdroot/LeaderF'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+
 if v:version >= 800
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'

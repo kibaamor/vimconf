@@ -12,10 +12,8 @@ echo "source ~/.vimconf/vimconf_plug.vim" >> ~/.vimrc
 
 # install rg (https://github.com/BurntSushi/ripgrep)
 sudo apt install ripgrep -y
-# install gtags
-sudo apt install global -y
-# install pygments
-pip install pygments
+# install gtags and pygments
+sudo apt install universal-ctags python3-pygments -y
 ```
 
 ## How To Setup Zsh

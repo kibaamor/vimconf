@@ -53,7 +53,7 @@ let g:Lf_RgConfig = [
     \ "--glob=!git/*",
     \ "--glob=!**/tags",
     \ "--hidden"
-  \ ]
+    \ ]
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
 noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
@@ -65,16 +65,50 @@ noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -S -e %s ", expand("<cword>"))<CR>
 xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -S -e %s ", leaderf#Rg#visual())<CR>
 noremap go :<C-U>Leaderf! rg --recall<CR>
 
-" install gtags (sudo apt install global) and pygments (pip install pygments) for use gtags
-" use `Leaderf gtags --update` for manual update
 let g:Lf_GtagsAutoGenerate = 0
-let g:Lf_GtagsSource = 2
-let g:Lf_Gtagslabel = 'native-pygments'
+let g:Lf_GtagsGutentags = 1
+let g:Lf_CacheDirectory = expand('~')
+
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
 noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
 noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+" }}
+
+
+" https://zhuanlan.zhihu.com/p/36279445
+" vim-gutentags {{
+let g:gutentags_project_root = ['.root']
+let g:gutentags_cache_dir = expand(g:Lf_CacheDirectory.'/LeaderF/gtags')
+
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+
+let g:gutentags_auto_add_gtags_cscope = 0
+
+let g:gutentags_modules = []
+if executable('ctags')
+    let g:gutentags_modules += ['ctags']
+endif
+if executable('gtags-cscope') && executable('gtags')
+    let g:gutentags_modules += ['gtags_cscope']
+endif
+" }}
+
+
+" https://github.com/skywind3000/gutentags_plus
+" gutentags_plus {{
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+" <leader>cg - view define
+" <leader>cs - view references
+" <leader>cc - view which functions call this function
+" <leader>cf - find files under current cursor
+" <leader>ci - find which files include this file
 " }}
 
 
@@ -96,6 +130,7 @@ nmap <Space>   <Plug>(easymotion-overwin-w)
 map  <Leader>W <Plug>(easymotion-bd-w)
 nmap <Leader>W <Plug>(easymotion-overwin-w)
 " }}
+
 
 " incsearch {{
 map /  <Plug>(incsearch-forward)
