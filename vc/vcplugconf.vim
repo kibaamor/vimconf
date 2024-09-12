@@ -67,7 +67,7 @@ noremap go :<C-U>Leaderf! rg --recall<CR>
 
 let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_GtagsGutentags = 1
-let g:Lf_CacheDirectory = expand('~')
+let g:Lf_CacheDirectory = expand('$HOME/.cache')
 
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
