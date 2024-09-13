@@ -47,6 +47,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 
+Plug 'fatih/vim-go'
+
 if v:version >= 800
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
