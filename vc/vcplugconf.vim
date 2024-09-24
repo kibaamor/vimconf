@@ -69,7 +69,7 @@ let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_GtagsGutentags = 1
 let g:Lf_CacheDirectory = expand('$HOME/.cache')
 
-noremap <leader>fc :<C-U><C-R>=printf("Leaderf! gtags --by-context --auto-jump")<CR><CR>
+noremap <C-G>      :<C-U><C-R>=printf("Leaderf! gtags --by-context --auto-jump")<CR><CR>
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
